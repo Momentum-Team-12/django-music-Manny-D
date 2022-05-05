@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<h2>Add a note for {{ album.title }}:</h2>
+
+<div class="flex flex-wrap">
+    {% for album in albums %}
+        <div>{{ note.note }}</div>
+</div>
+    {% endfor %}
+
+<div>
+    <form action="{% url 'add_note' pk=album.pk %}" method="POST">
+    {% csrf_token %} 
+    {{ form.as_p }} 
+    {% for note in album.notes.all %}
+        <div class="flex">
+            <div>{{ note.note }}</div>
+        </div>
+    {% endfor %}
+ <br>
+        <div>
+            <button type="submit">Add Note</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
