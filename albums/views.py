@@ -11,7 +11,7 @@ def list_albums(request):
     return render(request, "albums/list_albums.html", {"albums": albums})
 
 
-def add_album(request):
+def new_album(request):
     if request.method == 'GET':
         form = AlbumForm()
     else:
@@ -20,7 +20,7 @@ def add_album(request):
             form.save()
             return redirect(to='list_albums')
 
-    return render(request, "albums/add_album.html", {"form": form})
+    return render(request, "albums/new_album.html", {"form": form})
 
 
 def edit_album(request, pk):
