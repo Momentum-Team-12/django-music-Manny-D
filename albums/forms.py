@@ -8,13 +8,7 @@ class AlbumForm(forms.ModelForm):
         fields = [
             'title',
             'artist',
-            # 'created_at',
-            # 'city',
-            # 'state',
-            # 'zip_code',
-            # 'phone_number',
-            # 'email',
-            # 'birthday',
+            #'created_at', #don't need this
         ]
 
 class NoteForm(forms.ModelForm):
