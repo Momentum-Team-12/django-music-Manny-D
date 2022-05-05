@@ -16,7 +16,7 @@
             {{ album.artist }}<br />
         </div>
 
-    <h3>{{ album.created_at }}</h3>
+    <p>{{ album.created_at }}</p>
 
       <p>
         <a href="{% url 'add_note' pk=album.pk %}">Add Note</a><br> 
