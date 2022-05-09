@@ -9,23 +9,26 @@
     {% for album in albums %}
     <div class="w-33 pa3">
         <h2>{{ album.title }}</h2>
+        <p>Release date: {{ album.release_date }}</p>
 
         <div class="flex">
         <div class="pr2">
         <div>
-            {{ album.artist }}<br />
+          <a href="{% url 'notes_album' pk=album.pk %}">{{ album.artist }}</a><br>
         </div>
-
-    <p>{{ album.created_at }}</p>
+    
+    
 
       <p>
         <a href="{% url 'add_note' pk=album.pk %}">Add Note</a><br> 
         <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>    
         <a class="red" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
       </p>
+      <p>Entry created on: {{ album.created_at }}</p>
         </div>
         </div>
     </div>
+    
   {% endfor %}
 </div>  
 {% endblock %}
